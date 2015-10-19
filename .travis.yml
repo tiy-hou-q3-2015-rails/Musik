@@ -13,6 +13,6 @@ deploy:
   app: 'yes'
   on:
     repo: tiy-hou-q3-2015-rails/Musik
-run:
-  - "rake db:migrate"
-  - "rake cleanup"
+  run:
+    - "rake db:migrate"
+    - "rake cleanup"
