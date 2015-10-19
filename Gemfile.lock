@@ -157,11 +157,9 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-<<<<<<< HEAD
   bootstrap-sass
 =======
   bcrypt (~> 3.1.7)
->>>>>>> 608e102... created sessions controller and sign in form by modifying template provided also added Bcrypt
   byebug
   coffee-rails (~> 4.1.0)
   jbuilder (~> 2.0)
