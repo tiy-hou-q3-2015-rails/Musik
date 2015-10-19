@@ -48,3 +48,6 @@ end
 gem 'rails_12factor', group: :production
 
 gem 'react-rails', '~> 1.0'
+
+gem 'bootstrap-sass'
+gem 'simple_form'
