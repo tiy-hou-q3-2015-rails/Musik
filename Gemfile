@@ -46,4 +46,3 @@ group :development do
 end
 
 gem 'rails_12factor', group: :production
->>>>>>> e402b481385847a8e7022c057f9a6f49930491b0
