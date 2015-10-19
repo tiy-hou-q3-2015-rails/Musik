@@ -1,7 +1,12 @@
 Rails.application.routes.draw do
+<<<<<<< HEAD
   get 'users/new'
 
-  get 'users/:id/profile' => 'users#profile'
+  get 'users/profile'
+=======
+
+
+>>>>>>> 608e102... created sessions controller and sign in form by modifying template provided also added Bcrypt
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
