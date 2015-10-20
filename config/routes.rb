@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   root 'users#profile'
   mount Payola::Engine => '/payola', as: :payola
 
-  get '/index' => 'Musik#index', as: :index
+  get '/index' => 'musik#index', as: :index
 
   get 'users/new'
 
