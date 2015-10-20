@@ -1,7 +1,5 @@
 class UsersController < ApplicationController
 
-  before_action :authenticate_user!
-  
   def new
     @user = User.new
   end
@@ -19,6 +17,7 @@ class UsersController < ApplicationController
 
 
   def profile
+    before_action :authenticate_user!
     @user = User.find params[:id]
   end
 
