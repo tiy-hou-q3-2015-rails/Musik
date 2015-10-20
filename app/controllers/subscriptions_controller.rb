@@ -1,18 +1,22 @@
 class SubscriptionsController < ApplicationController
+
+  include Payola::StatusBehavior
+
   def new
-    @subscription = Subscription.new
+    @plan = Subscription.first
   end
 
   def create
-    #@subscription = Subscription.new params.require(:subscription).permit(:user_id, :amount, :interval, :stripe_id)
-  #end
+    # do any required setup here, including finding or creating the owner object
+    owner = @current_user
 
-owner = @current_user
+    # set your plan in the params hash
+    params[:plan] = Subscription.find_by(id: params[:plan_id])
 
-params[:plan] = Subscription.find_by(id: params[:plan_id])
+    # call Payola::CreateSubscription
+    subscription = Payola::CreateSubscription.call(params, owner)
 
-subscription = Payola::CreateSubscription.call(params, owner)
-
-render_payola_status(subscription)
+    # Render the status json that Payola's javascript expects
+    render_payola_status(subscription)
   end
 end

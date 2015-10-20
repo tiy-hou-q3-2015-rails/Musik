@@ -114,6 +114,12 @@ ActiveRecord::Schema.define(version: 20151020195332) do
 
   add_index "payola_subscriptions", ["guid"], name: "index_payola_subscriptions_on_guid", using: :btree
 
+  create_table "refile_attachments", force: :cascade do |t|
+    t.string "namespace", null: false
+  end
+
+  add_index "refile_attachments", ["namespace"], name: "index_refile_attachments_on_namespace", using: :btree
+
   create_table "subscriptions", force: :cascade do |t|
     t.integer  "amount",     default: 900
     t.string   "interval",   default: "month"
@@ -129,10 +135,10 @@ ActiveRecord::Schema.define(version: 20151020195332) do
     t.string   "username"
     t.string   "email"
     t.string   "password_digest"
-    t.string   "image"
     t.boolean  "subscription",    default: false
     t.datetime "created_at",                      null: false
     t.datetime "updated_at",                      null: false
+    t.string   "image_id"
     t.date     "birthday"
     t.string   "title"
     t.string   "information"

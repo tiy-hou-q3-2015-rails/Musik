@@ -1,5 +1,6 @@
 Payola.configure do |config|
 
+
   # Example subscription:
   #
   # config.subscribe 'payola.package.sale.finished' do |sale|
@@ -7,14 +8,15 @@ Payola.configure do |config|
   # end
   #
 
+  config.secret_key = 'sk_test_N5h4DATZGYc9WYAE1NFZ8KxB'
+  config.publishable_key = 'pk_test_lpH6LGQnRARCmDlbgXrZ2Mav'
 
-  config.secret_key = 'sk_live_iwillnevertell'
-  config.publishable_key = 'pk_live_iguessicantell'
 
   # payola.default_currency = 'gbp'
 
   config.subscribe 'payola.book.sale.finished' do |sale|
-    SaleMailer.receipt(sale.guid).deliver
+    subscription = sale.production
+    subscription.update(completed: true)
   end
 
   # config.subscribe 'payola.book.sale.failed' do |sale|
