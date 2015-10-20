@@ -125,10 +125,6 @@ ActiveRecord::Schema.define(version: 20151019220225) do
     t.string   "name"
   end
 
-
-ActiveRecord::Schema.define(version: 20151019220225) do
-  enable_extension "plpgsql"
-
   create_table "users", force: :cascade do |t|
     t.string   "first_name"
     t.string   "last_name"
