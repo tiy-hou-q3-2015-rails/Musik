@@ -3,11 +3,12 @@ class Subscription < ActiveRecord::Base
   include Payola::Plan
 
   def price_in_dollar
-    self.proce.to_i / 100.0
+    self.price.to_i / 100.0
   end
 
   def redirect_path(payola_sale)
-    "/confirmation/#{payola_sale.guid}"
+    # "/confirmation/#{payola_sale.guid}"
+    "/"
   end
 
 end

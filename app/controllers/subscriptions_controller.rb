@@ -3,7 +3,7 @@ class SubscriptionsController < ApplicationController
   include Payola::StatusBehavior
 
   def new
-    @plan = Subscription.new
+    @plan = Subscription.first
   end
 
   def create
