@@ -487,8 +487,7 @@
                           <b class="caret"></b>
                         </span>
                         <span class="text-muted text-xs block m-l">
-                          Art Director
-                          <!-- get from editable info on profile user -->
+                          <%= @user.title %>
                         </span>
                       </span>
                     </a>
@@ -577,15 +576,13 @@
                         <div>
                           <small class="text-uc text-xs text-muted">about me</small>
                           <p>
-                            Artist
-                            <!-- get from user model -->
+                            <%= @user.title %>
                           </p>
                           <small class="text-uc text-xs text-muted">
                             info
                           </small>
                           <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi id neque quam. Aliquam sollicitudin venenatis ipsum ac feugiat.
-                            <!-- get from user model -->
+                            <%= @user.information %>
                           </p>
                           <div class="line"></div>
                           <small class="text-uc text-xs text-muted">connection</small>

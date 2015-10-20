@@ -6,10 +6,11 @@ Rails.application.routes.draw do
 
   mount Payola::Engine => '/payola', as: :payola
 
-
   get 'users/new'
 
-  get 'users/:id/profile' => 'users#profile'
+  get 'users/:id/profile' => 'users#profile', as: :profile
+  get 'users/:id/profile/edit' => 'users#edit'
+  patch 'users/:id/profile' => 'users#update'
 
   get '/sign_in' => 'sessions#new', as: :sign_in
   post '/sign_in' => 'sessions#create'
