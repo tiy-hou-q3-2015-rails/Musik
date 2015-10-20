@@ -1,12 +1,11 @@
 Rails.application.routes.draw do
-
+  root 'musik#index'
   get '/sign_up' => 'users#new', as: :sign_up
   post '/sign_up'=> 'users#create', as: :users
-  root 'users#profile'
+
 
   mount Payola::Engine => '/payola', as: :payola
 
-  get '/index' => 'musik#index', as: :index
 
   get 'users/new'
 
