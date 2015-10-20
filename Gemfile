@@ -45,6 +45,9 @@ group :development do
   gem 'spring'
 end
 
+gem 'payola-payments'
+
 gem 'rails_12factor', group: :production
 gem 'bootstrap-sass'
 gem 'simple_form'
+gem 'payola-payments'
