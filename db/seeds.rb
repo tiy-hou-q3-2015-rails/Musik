@@ -9,5 +9,4 @@ jwo = User.create first_name: "Jesse",
                   last_name: "Wolgamott",
                   username: "jwo",
                   email: "jesse@tiy.com",
-                  password_digest: "12345678",
-                  
+                  password: "12345678"
