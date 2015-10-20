@@ -11,22 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 0) do
-=======
-ActiveRecord::Schema.define(version: 20151019160019) do
->>>>>>> 6df7299adf2a0db477d1ff751eb6a47b29437437
-=======
-ActiveRecord::Schema.define(version: 0) do
->>>>>>> 113cf0c804f93a5669d7d387f2e96cc646fc8d0e
 
-  # These are extensions that must be enabled in order to support this database
+ActiveRecord::Schema.define(version: 20151019220225) do
   enable_extension "plpgsql"
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
   create_table "users", force: :cascade do |t|
     t.string   "first_name"
     t.string   "last_name"
@@ -39,7 +27,4 @@ ActiveRecord::Schema.define(version: 0) do
     t.datetime "updated_at",                      null: false
   end
 
->>>>>>> 6df7299adf2a0db477d1ff751eb6a47b29437437
-=======
->>>>>>> 113cf0c804f93a5669d7d387f2e96cc646fc8d0e
 end
