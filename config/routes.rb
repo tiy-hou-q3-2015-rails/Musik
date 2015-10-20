@@ -11,8 +11,9 @@ Rails.application.routes.draw do
   delete '/sign_out' => 'sessions#delete', as: :sign_out
 
   resources :subscriptions
-  get 'subscriptions/new' => 'subscriptions#new', as: :new_subscription
-  post 'subscriptions' => 'subscriptions#create', as: :subscriptions
+
+  # The priority is based upon order of creation: first created -> highest priority.
+  # See how all your routes lay out with "rake routes".
 
 
 end
