@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   mount Payola::Engine => '/payola', as: :payola
-
   get 'users/new'
 
   get 'users/:id/profile' => 'users#profile'
