@@ -17,7 +17,6 @@ class UsersController < ApplicationController
 
 
   def profile
-    before_action :authenticate_user!
     @user = User.find params[:id]
   end
 
