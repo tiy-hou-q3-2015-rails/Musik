@@ -7,9 +7,9 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       log_in @user
-      redirect_to new_subscription_path, notice: "Please subscribe"
+      redirect_to root_path, notice: "Please subscribe"
     else
-      render:new
+      render :new
     end
 
   end
@@ -20,6 +20,6 @@ class UsersController < ApplicationController
 
 
   def user_params
-    params.require(:user).permit(:first_name, :last_name,:username, :email, :password, :password_confirmation )
+    params.require(:user).permit(:first_name, :last_name, :username, :email, :password, :password_confirmation )
   end
 end
