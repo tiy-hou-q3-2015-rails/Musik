@@ -1,11 +1,12 @@
-<!-- this header can go in <head> or at the bottom of <body> -->
 <%= render 'payola/transactions/stripe_header' %>
 
 <%= form_tag('/subscriptions',
       class: 'payola-onestep-subscription-form',
       'data-payola-base-path' => '/payola',
-      'data-payola-plan-type' => @subscription.plan_class,
-      'data-payola-plan-id' => @subscription.id
+
+      'data-payola-plan-type' => @plan.plan_class,
+      'data-payola-plan-id' => @plan.id
+
   ) do |f| %>
   <span class="payola-payment-error"></span>
   Email:<br>
