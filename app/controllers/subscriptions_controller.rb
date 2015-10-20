@@ -1,4 +1,4 @@
-class SubscriptionController < ApplicationController
+class SubscriptionsController < ApplicationController
 
   include Payola::StatusBehavior
 
@@ -8,7 +8,7 @@ class SubscriptionController < ApplicationController
 
   def create
     # do any required setup here, including finding or creating the owner object
-    owner = @current_user 
+    owner = @current_user
 
     # set your plan in the params hash
     params[:plan] = Subscription.find_by(id: params[:plan_id])
