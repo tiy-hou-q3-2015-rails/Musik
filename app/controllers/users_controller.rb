@@ -8,7 +8,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       log_in @user
-      redirect_to root_path, notice: "Please subscribe"
+      redirect_to new_subscription_path, notice: "Please subscribe"
     else
       render :new
     end
