@@ -8,8 +8,8 @@ Payola.configure do |config|
   # end
   #
 
-  config.secret_key = 'sk_test_N5h4DATZGYc9WYAE1NFZ8KxB'
-  config.publishable_key = 'pk_test_lpH6LGQnRARCmDlbgXrZ2Mav'
+  config.secret_key = ENV['stripe_api_key']
+  config.publishable_key = ENV['stripe_publishable_key']
 
 
   # payola.default_currency = 'gbp'

@@ -12,4 +12,5 @@ jwo = User.create first_name: "Jesse",
                   password: "12345678",
                   title: "Rails God",
                   information: "Scrum project startup freemium supply chain social proof iPhone responsive web design backing focus seed money user experience. Analytics success graphical user interface alpha growth hacking investor mass market backing freemium funding business-to-consumer monetization. Founders incubator iteration interaction design bandwidth branding twitter analytics low hanging fruit value proposition. Pitch supply chain low hanging fruit startup leverage stock business plan scrum project A/B testing twitter stealth."
-                  
+
+austin_test = Subscription.create name: "Austin Test", stripe_id: "austin_test", amount: 350
