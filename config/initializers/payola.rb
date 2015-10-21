@@ -8,13 +8,13 @@ Payola.configure do |config|
   # end
   #
 
-  config.secret_key = 'sk_test_N5h4DATZGYc9WYAE1NFZ8KxB'
-  config.publishable_key = 'pk_test_lpH6LGQnRARCmDlbgXrZ2Mav'
+  config.secret_key = ENV['stripe_api_key']
+  config.publishable_key = ENV['stripe_publishable_key']
 
 
   # payola.default_currency = 'gbp'
 
-  config.subscribe 'payola.book.sale.finished' do |sale|
+  config.subscribe 'payola.subscription.sale.finished' do |sale|
     subscription = sale.production
     subscription.update(completed: true)
   end
