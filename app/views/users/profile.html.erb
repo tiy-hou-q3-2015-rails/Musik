@@ -463,7 +463,7 @@
                       </span>
                       <span class="hidden-nav-xs clear">
                         <span class="block m-l">
-                          <strong class="font-bold text-lt"><%= @user.first_name %>.<%= @user.last_name %>.Smith</strong>
+                          <strong class="font-bold text-lt"><%= @user.first_name %>.<%= @user.last_name %></strong>
                           <b class="caret"></b>
                         </span>
                         <span class="text-muted text-xs block m-l">
@@ -540,19 +540,26 @@
                             </div>
                           </div>
                         </div>
-                        <div class="btn-group btn-group-justified m-b">
-                          <a class="btn btn-success btn-rounded" data-toggle="button">
-                            <span class="text">
-                              <i class="fa fa-eye"></i> Follow
-                            </span>
-                            <span class="text-active">
-                              <i class="fa fa-eye"></i> Following
-                            </span>
-                          </a>
-                          <a class="btn btn-dark btn-rounded">
-                            <i class="fa fa-comment-o"></i> Chat
-                          </a>
-                        </div>
+                        <% if @current_user != @user %>
+                          <div class="btn-group btn-group-justified m-b">
+                              <% if @current_user.following? @user %>
+                                  <%= link_to stop_following_user_path(id: @user.id), class: "btn btn-success btn-rounded", data: {toggle: "button"}, method: :post do %>
+                                    <span class="text">
+                                     <i class="fa fa-eye"></i> Unfollowing
+                                    </span>
+                                  <% end %>
+                              <% else %>
+                                  <%= link_to follow_user_path(id: @user.id), class: "btn btn-success btn-rounded", data: {toggle: "button"}, method: :post do %>
+                                    <span class="text">
+                                     <i class="fa fa-eye"></i> Follow
+                                    </span>
+                                  <% end %>
+                              <% end %>
+                            <a class="btn btn-dark btn-rounded">
+                              <i class="fa fa-comment-o"></i> Chat
+                            </a>
+                          </div>
+                        <% end %>
                         <div>
                           <small class="text-uc text-xs text-muted">about me</small>
                           <p>
