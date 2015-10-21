@@ -14,7 +14,7 @@
 
   # payola.default_currency = 'gbp'
 
-  config.subscribe 'payola.book.sale.finished' do |sale|
+  config.subscribe 'payola.subscription.sale.finished' do |sale|
     subscription = sale.production
     subscription.update(completed: true)
   end
