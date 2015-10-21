@@ -65,6 +65,14 @@
                               <i class="fa fa-comment-o"></i> Chat
                             </a>
                           </div>
+                        <% else %>
+                          <div class="btn-group btn-group-justified m-b">
+                            <%= link_to edit_path(id: @current_user.id), class: "btn btn-success btn-rounded", data: {toggle: "button"}, method: :get do %>
+                              <span class="text">
+                               Edit My Profile
+                              </span>
+                            <% end %>
+                          </div>
                         <% end %>
                         <div>
                           <small class="text-uc text-xs text-muted">about me</small>
