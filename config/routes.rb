@@ -8,13 +8,18 @@ Rails.application.routes.draw do
 
   get 'users/new'
 
-  get 'users/:id/profile' => 'users#profile', as: :profile
+  get 'users/:id/profile' => 'users#profile', as: :user
   get 'users/:id/profile/edit' => 'users#edit'
   patch 'users/:id/profile' => 'users#update'
 
   get '/sign_in' => 'sessions#new', as: :sign_in
   post '/sign_in' => 'sessions#create'
   delete '/sign_out' => 'sessions#delete', as: :sign_out
+
+  post "/users/:id/follow" => "following#create", as: :follow_user
+
+  post "/users/:id/stop-following" => "following#delete", as: :stop_following_user
+
 
   resources :subscriptions
 

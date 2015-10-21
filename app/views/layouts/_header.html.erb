@@ -1,5 +1,5 @@
 <header class="bg-white-only header header-md navbar navbar-fixed-top-xs">
-  <div class="navbar-header aside bg-info dk">
+  <div class="navbar-header aside bg-info nav-xs">
     <a class="btn btn-link visible-xs" data-toggle="class:nav-off-screen,open" data-target="#nav,html">
       <i class="icon-list"></i>
     </a>
@@ -39,15 +39,12 @@
         <section class="dropdown-menu aside-xl animated fadeInUp">
           <section class="panel bg-white">
             <div class="panel-heading b-light bg-light">
-              <strong>You have <span class="count">
-                2
-                <!-- get from some sort of notification model -->
-              </span> notifications</strong>
+              <strong>You have <span class="count">2</span> notifications</strong>
             </div>
             <div class="list-group list-group-alt">
               <a href="#" class="media list-group-item">
                 <span class="pull-left thumb-sm">
-
+                  <img src="images/a0.png" alt="..." class="img-circle">
                 </span>
                 <span class="media-body block m-b-none">
                   Use awesome animate.css<br>
@@ -71,9 +68,9 @@
       <li class="dropdown">
         <a href="#" class="dropdown-toggle bg clear" data-toggle="dropdown">
           <span class="thumb-sm avatar pull-right m-t-n-sm m-b-n-sm m-l-sm">
-            <img src="images/a0.png" alt="...">
+            <%= image_tag attachment_url(@current_user, :image), class: "img-circle" %>
           </span>
-
+          <%=@current_user.last_name%> <b class="caret"></b>
         </a>
         <ul class="dropdown-menu animated fadeInRight">
           <li>
@@ -81,10 +78,9 @@
             <a href="#">Settings</a>
           </li>
           <li>
-            <a href="profile.html">
-              Edit Profile
-              <!-- link to edit_path or something -->
-            </a>
+            <%= link_to user_path(id: @current_user.id) do %>
+              Profile
+            <% end %>
           </li>
           <li>
             <a href="#">
@@ -97,34 +93,10 @@
           </li>
           <li class="divider"></li>
           <li>
-            <a href="modal.lockme.html" data-toggle="ajaxModal" >
-              Logout
-              <!-- get from link to sign_out_path -->
-            </a>
+            <%= link_to 'Sign Out', sign_out_path, method: :delete, data: {confirm: "Are you sure you want to Sign Out"} %>
           </li>
         </ul>
       </li>
     </ul>
   </div>
 </header>
-<div class="container">
-  <div class="col-md-8 col-md-offset-2">
-    <h1>Welcome to Musik!</h1>
-    <div class="subscription-info">
-      <h3>Include marketing copy here</h3>
-      <p>
-        They were lost without the fattest plywood that composed their actor. We know that a clankless math's smile comes with it the thought that the eery jewel is a cross. Their alloy was, in this moment, a choky scissor. A group of the dinner is assumed to be an unsliced amusement.
-      </p>
-      <p>
-        They were lost without the fattest plywood that composed their actor. We know that a clankless math's smile comes with it the thought that the eery jewel is a cross. Their alloy was, in this moment, a choky scissor. A group of the dinner is assumed to be an unsliced amusement.
-      </p>
-      <p>
-        They were lost without the fattest plywood that composed their actor. We know that a clankless math's smile comes with it the thought that the eery jewel is a cross. Their alloy was, in this moment, a choky scissor. A group of the dinner is assumed to be an unsliced amusement.
-      </p>
-    </div>
-    <div class="subscribe-button">
-      <%= render 'payola/subscriptions/checkout', plan: @plan %>
-    </div>
-  </div>
-
-</div>
