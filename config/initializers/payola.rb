@@ -1,4 +1,4 @@
-Payola.configure do |config|
+  Payola.configure do |config|
 
 
   # Example subscription:
