@@ -64,7 +64,7 @@
                 <div class="list-group list-group-alt">
                   <a href="#" class="media list-group-item">
                     <span class="pull-left thumb-sm">
-                      <img src="<%= @user.image %>" alt="..." class="img-circle">
+                      <%= image_tag attachment_url(@user, :image), class: "img-circle" %>
                     </span>
                     <span class="media-body block m-b-none">
                       Use awesome animate.css<br>
@@ -88,7 +88,7 @@
           <li class="dropdown">
             <a href="#" class="dropdown-toggle bg clear" data-toggle="dropdown">
               <span class="thumb-sm avatar pull-right m-t-n-sm m-b-n-sm m-l-sm">
-                <img src="images/a0.png" alt="...">
+                <%= image_tag attachment_url(@user, :image), class: "img-circle" %>
               </span>
               <%= @user.first_name %>.<%= @user.last_name %> <b class="caret"></b>
             </a>
@@ -521,7 +521,7 @@
                       <div class="wrapper">
                         <div class="text-center m-b m-t">
                           <a href="#" class="thumb-lg">
-                            <img src="images/a0.png" class="img-circle">
+                            <%= image_tag attachment_url(@user, :image), class: "img-circle" %>
                           </a>
                           <div>
                             <div class="h3 m-t-xs m-b-xs"><%= @user.first_name %>.<%= @user.last_name %></div>

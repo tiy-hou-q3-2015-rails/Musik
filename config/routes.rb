@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
   get 'users/new'
 
-  get 'users/:id/profile' => 'users#profile', as: :profile
+  get 'users/:id/profile' => 'users#profile', as: :user
   get 'users/:id/profile/edit' => 'users#edit'
   patch 'users/:id/profile' => 'users#update'
 
