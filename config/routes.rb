@@ -16,6 +16,11 @@ Rails.application.routes.draw do
   post '/sign_in' => 'sessions#create'
   delete '/sign_out' => 'sessions#delete', as: :sign_out
 
+  post "/users/:id/follow" => "following#create", as: :follow_user
+
+  post "/users/:id/stop-following" => "following#delete", as: :stop_following_user
+
+
   resources :subscriptions
 
   # The priority is based upon order of creation: first created -> highest priority.
