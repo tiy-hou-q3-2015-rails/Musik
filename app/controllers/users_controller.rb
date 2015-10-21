@@ -18,6 +18,11 @@ class UsersController < ApplicationController
 
   def profile
     @user = User.find params[:id]
+    @users = User.where("id != ?", @user.id)
+    group = @user.following_users
+
+   follower_ids = group.pluck(:id)
+
   end
 
 
