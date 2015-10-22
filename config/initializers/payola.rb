@@ -1,5 +1,13 @@
   Payola.configure do |config|
 
+  config.subscribe('payola.subscription.active') do |sub|
+   user = User.find_by(email: sub.email)
+   user.subscription = sub.plan
+   user.save!
+   sub.owner = user
+   sub.save!
+ end
+
 
   # Example subscription:
   #

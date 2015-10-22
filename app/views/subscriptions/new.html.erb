@@ -108,6 +108,9 @@
   </div>
 </header>
 <div class="container">
+  <% if notice %>
+    <div class="alert alert-warning"><%= notice %></div>
+  <% end %>
   <div class="col-md-8 col-md-offset-2">
     <h1>Welcome to Musik!</h1>
     <div class="subscription-info">
@@ -123,7 +126,7 @@
       </p>
     </div>
     <div class="subscribe-button">
-      <%= render 'payola/subscriptions/checkout', plan: @plan %>
+      <%= render 'payola/subscriptions/checkout', plan: @plan, email: @current_user.email %>
     </div>
   </div>
 

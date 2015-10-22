@@ -4,10 +4,16 @@ class User < ActiveRecord::Base
   attachment :image
   acts_as_followable
   acts_as_follower
+  belongs_to :subscription
 
   def full_name
    [last_name, first_name].join(", ")
- end
+  end
+
+  def payola_subscription
+    Payola::Subscription.find_by owner_type: "User", owner_id: id
+  end
+
 
 
 end
