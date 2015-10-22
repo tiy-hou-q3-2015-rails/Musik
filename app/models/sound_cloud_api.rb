@@ -5,6 +5,12 @@ class SoundCloudAPI
   end
 
   def hot_tracks(num_of_tracks=8)
-    @client.get('/tracks', limit: num_of_tracks , :order => 'hotness')
+    current_date = Time.now
+    options = {}
+    options["limit"] = num_of_tracks
+    options["order"] = "created_at"
+    options["license"] = "cc-by-sa"
+
+    @client.get('/tracks', options)
   end
 end
