@@ -57,7 +57,7 @@ $(document).ready(function(){
     keyEnabled: true,
     audioFullScreen: false
   });
-  
+
   $(document).on($.jPlayer.event.pause, myPlaylist.cssSelector.jPlayer,  function(){
     $('.musicbar').removeClass('animate');
     $('.jp-play-me').removeClass('active');
@@ -84,7 +84,7 @@ $(document).ready(function(){
       var i = Math.floor(Math.random() * (1 + 7 - 1));
       myPlaylist.play(i);
     }
-    
+
   });
 
 
