@@ -21,10 +21,8 @@ class UsersController < ApplicationController
     @users = User.where("id != ?", @user.id)
     group = @user.following_users
 
-    follower_ids = group.pluck(:id)
+   follower_ids = group.pluck(:id)
 
-    @city = request.safe_location.city
-    @country = request.safe_location.country
   end
 
 
