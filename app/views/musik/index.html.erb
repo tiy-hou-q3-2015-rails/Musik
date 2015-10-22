@@ -3,7 +3,7 @@
   <%= render 'layouts/header' %>
   <section>
     <section class="hbox stretch">
-      <%= render 'layouts/aside' %>
+      
       <section id="content">
         <section class="hbox stretch">
           <section>
@@ -12,7 +12,7 @@
                 <%= render 'layouts/tracks_view' %>
                 <div class="row">
                   <%= render partial: 'layouts/hot_songs', locals: { tracks: @tracks } %>
-                  <%= render 'layouts/top_songs' %>
+                  <%= render partial: 'layouts/top_songs', locals: { top_tracks: @top_tracks } %>
                 </div>
               </section>
               <%= render partial: 'layouts/react_player', locals:{track_url: @track_url}%>
