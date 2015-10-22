@@ -1,5 +1,7 @@
 class MusikController < ApplicationController
-  before_action :authenticate_user!, :setup_soundcloud
+
+  before_action :authenticate_user!, :authenticate_subscription!, except: [:show]
+  before_action :setup_soundcloud
 
   def index
     @track_url = "https://soundcloud.com/daze-of-resistance/recursion"
