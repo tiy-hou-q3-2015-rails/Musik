@@ -1,0 +1,62 @@
+.player {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+
+  .soundcloud-player {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    width: 100%;
+
+    i {
+      font-size: 2em;
+      margin-right: 30px;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    .track-title {
+      width: 20%;
+      margin-right: 30px;
+    }
+
+    p {
+      margin: 0;
+      padding: 0;
+    }
+
+    .progress-bar {
+      display: flex;
+      align-items: center;
+      width: 80%;
+      background-color: #5A6A7A;
+
+      span {
+        font-size: 12px;
+      }
+
+      .elapsed-time {
+        margin-right: 15px;
+      }
+
+      .total-time {
+        margin-left: 15px;
+      }
+
+      progress {
+        width: 600px;
+        height: 12px;
+        appearance: none;
+        border-radius: 2px;
+        border: 0;
+      }
+    }
+  }
+}

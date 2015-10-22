@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   root 'musik#index'
+  get 'musik/:artist/:track_title' => 'musik#show', as: :song_path
   get '/sign_up' => 'users#new', as: :sign_up
   post '/sign_up'=> 'users#create', as: :users
 
@@ -9,7 +10,7 @@ Rails.application.routes.draw do
   get 'users/new'
 
   get 'users/:id/profile' => 'users#profile', as: :user
-  get 'users/:id/profile/edit' => 'users#edit'
+  get 'users/:id/profile/edit' => 'users#edit', as: :edit
   patch 'users/:id/profile' => 'users#update'
 
   get '/sign_in' => 'sessions#new', as: :sign_in

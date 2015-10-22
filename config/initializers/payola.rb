@@ -1,4 +1,4 @@
-Payola.configure do |config|
+  Payola.configure do |config|
 
   config.subscribe('payola.subscription.active') do |sub|
    user = User.find_by(email: sub.email)
@@ -16,8 +16,8 @@ Payola.configure do |config|
   # end
   #
 
-  config.secret_key = 'sk_test_N5h4DATZGYc9WYAE1NFZ8KxB'
-  config.publishable_key = 'pk_test_lpH6LGQnRARCmDlbgXrZ2Mav'
+  config.secret_key = ENV['stripe_api_key']
+  config.publishable_key = ENV['stripe_publishable_key']
 
 
   # payola.default_currency = 'gbp'

@@ -1,4 +1,10 @@
 @import 'bootstrap-sprockets';
 @import 'bootstrap';
-@import "css/*";
-@import 'subscription.scss'
+@import 'subscription.scss';
+@import 'app.scss';
+@import 'animate.scss';
+@import 'font-awesome.min.scss';
+@import 'font.scss';
+@import 'simple-line-icons.scss';
+
+@import 'player';
