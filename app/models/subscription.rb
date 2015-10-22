@@ -8,8 +8,8 @@ class Subscription < ActiveRecord::Base
   end
 
   def redirect_path(payola_sale)
-    # "/confirmation/#{payola_sale.guid}"
-    "/"
+    "/confirmation/#{payola_sale.guid}"
+
   end
 
 end

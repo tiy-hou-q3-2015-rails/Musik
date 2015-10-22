@@ -1,5 +1,13 @@
 Payola.configure do |config|
 
+  config.subscribe('payola.subscription.active') do |sub|
+   user = User.find_by(email: sub.email)
+   user.subscription = sub.plan
+   user.save!
+   sub.owner = user
+   sub.save!
+ end
+
 
   # Example subscription:
   #
@@ -14,7 +22,7 @@ Payola.configure do |config|
 
   # payola.default_currency = 'gbp'
 
-  config.subscribe 'payola.book.sale.finished' do |sale|
+  config.subscribe 'payola.subscription.sale.finished' do |sale|
     subscription = sale.production
     subscription.update(completed: true)
   end

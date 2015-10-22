@@ -15,6 +15,22 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def authenticate_subscription!
+    # Determine if subscription exists
+    if @current_user.payola_subscription.blank?
+      redirect_to new_subscription_path, alert: "Please subscribe"
+    else
+      # Determine if subscription has expired
+      if Time.now > @current_user.payola_subscription.current_period_end
+        redirect_to new_subscription_path, alert: "Your subscription has expired"
+      end
+    end
+    # Determine if subscription has expired
+    # if Time.now > @current_user.payola_subscription.current_period_end
+    #   redirect_to new_subscription_path, alert: "Your subscription has expired"
+    # end
+  end
+
   def sign_in user
     session[:user_id] = user.id
   end
