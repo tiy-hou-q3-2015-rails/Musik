@@ -9,3 +9,6 @@ stripe_publishable_key: pk_test_lpH6LGQnRARCmDlbgXrZ2Mav
 # production:
 #   stripe_api_key: sk_live_EeHnL644i6zo4Iyq4v1KdV9H
 #   stripe_publishable_key: pk_live_9lcthxpSIHbGwmdO941O1XVU
+GMAIL_USERNAME_DEV: ironagencyhou
+GMAIL_PASSWORD_DEV: IRONAGENCY1234
+ADMIN_RECIPIENT_EMAIL: ironagencyclient@gmail.com
