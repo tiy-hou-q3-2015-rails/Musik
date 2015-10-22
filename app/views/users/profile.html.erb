@@ -21,8 +21,10 @@
                           <div>
                             <div class="h3 m-t-xs m-b-xs"><%= @user.first_name %>.<%= @user.last_name %></div>
                             <small class="text-muted">
-                              <i class="fa fa-map-marker"></i>
-                              London, UK <!-- get from @subscription.city, @subscription.country -->
+                              <% if (@city != nil) && (@country != 'Reserved') %>
+                                <i class="fa fa-map-marker"></i>
+                                <%= @city %>, <%= @country %>
+                              <% end %>
                             </small>
                           </div>
                         </div>
