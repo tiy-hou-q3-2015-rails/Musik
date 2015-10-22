@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   root 'musik#index'
+  get 'musik/:artist/:track_title' => 'musik#show', as: :song_path
   get '/sign_up' => 'users#new', as: :sign_up
   post '/sign_up'=> 'users#create', as: :users
 

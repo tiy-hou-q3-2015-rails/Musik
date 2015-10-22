@@ -15,7 +15,7 @@
                   <%= render 'layouts/top_songs' %>
                 </div>
               </section>
-              <%= render 'layouts/react_player' %>
+              <%= render partial: 'layouts/react_player', locals:{track_url: @track_url}%>
             </section>
           </section>
           <!-- side content -->

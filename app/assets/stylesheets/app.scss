@@ -647,6 +647,11 @@ body.container {
   .hbox > section.hidden-sm {
     display: table-cell !important;
   }
+
+  .hbox.stretch{
+    background-color: #F2F4F8;
+  }
+
   .vbox {
     display: table;
     border-spacing: 0;
