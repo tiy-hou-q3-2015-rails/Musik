@@ -1,7 +1,10 @@
 class MusikController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, :setup_soundcloud
   def index
-    soundcloud_client = SoundCloudAPI.new
-    @tracks = soundcloud_client.hot_tracks
+    @tracks = @client.hot_tracks
+  end
+
+  def setup_soundcloud
+    @client = SoundCloudAPI.new
   end
 end
