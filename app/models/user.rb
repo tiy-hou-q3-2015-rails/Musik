@@ -14,6 +14,8 @@ class User < ActiveRecord::Base
     Payola::Subscription.find_by owner_type: "User", owner_id: id
   end
 
-
+  def self.subscribers
+    self.where.not(:subscription_id => nil)
+  end
 
 end
