@@ -27,7 +27,7 @@
                   }(document, "script", "twitter-wjs"));</script>
                 <%= render 'layouts/tracks_view' %>
                 <div class="row">
-                  <%= render partial: 'layouts/hot_songs', locals: { tracks: @tracks } %>
+                  <%= render partial: 'layouts/new_songs', locals: { tracks: @tracks } %>
                   <%= render partial: 'layouts/top_songs', locals: { top_tracks: @top_tracks } %>
                 </div>
               </section>

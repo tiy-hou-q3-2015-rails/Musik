@@ -8,6 +8,7 @@ class MusikController < ApplicationController
     @track_url = "https://soundcloud.com/daze-of-resistance/recursion"
     @tracks = @client.recent_tracks
     @top_tracks = @client.hot_tracks(5)
+    @discover_tracks = @client.hot_tracks(18)
   end
 
   def setup_soundcloud
