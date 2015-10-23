@@ -1,9 +1,25 @@
-<h1>Subscription Confirmed!</h1>
+<%= render 'layouts/header' %>
+<div class="container">
+  <% if notice %>
+    <div class="alert alert-warning"><%= notice %></div>
+  <% end %>
+  <div class="col-md-8 col-md-offset-2">
+    <h1>Subscription Confirmed!</h1>
 
-<h3>Good job!</h3>
+    <div class="well">
+      <dl class="">
+        <dt>Email</dt>
+        <dd><%= @current_user.email %></dd>
+        <dt>Order ID</dt>
+        <dd><%= @sale.guid %></dd>
+        <dt>Order Date</dt>
+        <dd><%= @sale.created_at.strftime("%A %B %e %Y") %></dd>
+      </dl>
+    </div>
 
-<div>
-  Your sale: <%= @sale.guid %><br/>
-  Your expiration date: <%= @sale.current_period_end %>
+    <h3><%= link_to "Continue to the music", root_path %></h3>
+
+
+  </div>
 
 </div>
