@@ -1,4 +1,4 @@
-var Track = React.createClass({
+var SmallTrackGridItem = React.createClass({
 
   handleTrackSelection: function(e) {
     e.preventDefault();
