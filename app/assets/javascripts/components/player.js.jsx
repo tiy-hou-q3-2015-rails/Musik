@@ -10,7 +10,6 @@ var Player = React.createClass({
 
   componentDidMount: function() {
     var component = this;
-    console.log(this.state.player);
 
     // Listen for the timeupdate event, so when the
     // song is playing the elapsed-time Timer gets
@@ -45,16 +44,13 @@ var Player = React.createClass({
     }
   },
 
-  handleProgressClick: function(e) {
-    console.log(e);
-  },
-
   render: function() {
     var playerControl = this.state.isPlaying ? "fa fa-pause" : "fa fa-play";
     return(
       <div className="soundcloud-player">
         <i className={playerControl} onClick={this.playTrack}></i>
         <p className="track-title">{this.props.currentTrack.title}</p>
+        <Sharer currentTrack={this.props.currentTrack} />
         <div className="progress-bar">
           <Timer timeValue={this.state.currentTime} className="elapsed-time" />
           <progress max={this.state.player.duration} value={this.state.currentTime}>
