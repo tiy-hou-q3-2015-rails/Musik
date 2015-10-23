@@ -13,7 +13,6 @@ var SoundCloudContainer = React.createClass({
   },
 
   handleSelectedTrack: function(track) {
-    console.log(track);
     this.resolveTrack(track);
   },
 
