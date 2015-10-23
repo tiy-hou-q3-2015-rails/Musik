@@ -3,7 +3,7 @@
   <%= render 'layouts/header' %>
   <section>
     <section class="hbox stretch">
-      <%= render 'layouts/aside' %>
+
       <section id="content">
         <section class="hbox stretch">
           <section>
@@ -11,11 +11,11 @@
               <section class="scrollable padder-lg w-f-md" id="bjax-target">
                 <%= render 'layouts/tracks_view' %>
                 <div class="row">
-                  <%= render 'layouts/new_songs' %>
-                  <%= render 'layouts/top_songs' %>
+                  <%= render partial: 'layouts/new_songs', locals: { tracks: @tracks } %>
+                  <%= render partial: 'layouts/top_songs', locals: { top_tracks: @top_tracks } %>
                 </div>
               </section>
-              <%= render 'layouts/react_player' %>
+              <%= render partial: 'layouts/react_player', locals:{track_url: @track_url}%>
             </section>
           </section>
           <!-- side content -->
