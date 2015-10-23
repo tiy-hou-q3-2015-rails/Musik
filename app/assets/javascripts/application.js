@@ -15,7 +15,11 @@
 //= require bootstrap-sprockets
 //= require jquery_ujs
 //= require soundcloud-audio
+//= require eventEmitter
 //= require react
 //= require react_ujs
 //= require components
 //= require_tree .
+
+
+var ee = new EventEmitter();

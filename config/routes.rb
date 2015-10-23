@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
   root 'musik#index'
+  get 'musik/:artist/:track_title' => 'musik#show', as: :song_path
   get '/sign_up' => 'users#new', as: :sign_up
   post '/sign_up'=> 'users#create', as: :users
-
 
   mount Payola::Engine => '/payola', as: :payola
 
@@ -22,6 +22,7 @@ Rails.application.routes.draw do
 
 
   resources :subscriptions
+  get 'confirmation/:sale_guid' => 'subscriptions#confirmation', as: :confirmation
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
