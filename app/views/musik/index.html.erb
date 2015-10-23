@@ -9,7 +9,7 @@
           <section>
             <section class="vbox">
               <section class="scrollable padder-lg w-f-md" id="bjax-target">
-                <script>window.twttr = (function(d, s, id) {
+                <!-- <script>window.twttr = (function(d, s, id) {
                     var js, fjs = d.getElementsByTagName(s)[0],
                       t = window.twttr || {};
                     if (d.getElementById(id)) return t;
@@ -24,7 +24,7 @@
                     };
 
                     return t;
-                  }(document, "script", "twitter-wjs"));</script>
+                  }(document, "script", "twitter-wjs"));</script> -->
                 <%= render 'layouts/tracks_view' %>
                 <div class="row">
                   <%= render partial: 'layouts/new_songs', locals: { tracks: @tracks } %>
@@ -51,11 +51,11 @@
   <script type="text/javascript" src="assets/jPlayer/jquery.jplayer.min.js"></script>
   <script type="text/javascript" src="assets/jPlayer/add-on/jplayer.playlist.min.js"></script>
   <script type="text/javascript" src="assets/jPlayer/demo.js"></script>
-  <script>!function(d,s,id){
+  <!-- <script>!function(d,s,id){
     var js,fjs=d.getElementsByTagName(s)[0];
     if(!d.getElementById(id)){
       js=d.createElement(s);
       js.id=id;js.src="//platform.twitter.com/widgets.js";
       fjs.parentNode.insertBefore(js,fjs);}} (document,"script","twitter-wjs");
-  </script>
+  </script> -->
 </body>

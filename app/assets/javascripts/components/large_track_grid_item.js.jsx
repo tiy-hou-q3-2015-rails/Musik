@@ -19,7 +19,7 @@ var LargeTrackGridItem = React.createClass({
                 <a href="#" onClick={component.handleSelectedTrack}><i className="icon-control-play i-2x"></i></a>
               </div>
               <div className="bottom padder m-b-sm">
-                <a href="#" className="pull-right">
+                <a href={"/musik/" + component.props.data.user.permalink + "/" + component.props.data.permalink} className="pull-right">
                   <i className="fa fa-heart-o"></i>
                 </a>
                 <a href="#">

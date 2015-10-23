@@ -50,7 +50,6 @@ var Player = React.createClass({
       <div className="soundcloud-player">
         <i className={playerControl} onClick={this.playTrack}></i>
         <p className="track-title">{this.props.currentTrack.title}</p>
-        <Sharer currentTrack={this.props.currentTrack} />
         <div className="progress-bar">
           <Timer timeValue={this.state.currentTime} className="elapsed-time" />
           <progress max={this.state.player.duration} value={this.state.currentTime}>
@@ -59,5 +58,8 @@ var Player = React.createClass({
         </div>
       </div>
     );
-  }
+  },
+
+  // <Sharer currentTrack={this.props.currentTrack} />
+
 });
