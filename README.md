@@ -1,6 +1,11 @@
 # Musik
 
 
+Musik is the place for your sounds and music. Not even a tennspot per month! Try it out at http://fathomless-lowlands-1244.herokuapp.com/
+
+![wars](http://gif.co/tb9D.gif)
+
+
 ### Set the following keys in your config/application.yml
 
 (Set it using `bundle exec figaro install`) (and if that fails, you need to `rbenv rehash`)
