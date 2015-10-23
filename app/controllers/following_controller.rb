@@ -1,6 +1,7 @@
 class FollowingController < ApplicationController
 
 before_action :authenticate_user!
+before_action :authenticate_subscription!
 
 def create
     new_user = User.find params[:id]
