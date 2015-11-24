@@ -4,6 +4,9 @@
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
 </head>
   <body>
-<p>This is a test email :)</p>
+<h1>Today's Top 100 Tracks:</h1>
+  <% @top_hunnad.each do |track| %>
+    <p><%= track.title %></p>
+  <% end %>
   </body>
 </html>
